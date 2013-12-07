@@ -5,6 +5,7 @@
 	<title>Bienvenidos :: Codigo facilito</title>
 </head>
 <body>
-	<h1>Llamado desde el controlador código facilito</h1>
+	<h1>Llamado desde el controlador código facilito</h1>  
+	<p><?php echo getNombre(); ?></p>
 </body>
 </html>
