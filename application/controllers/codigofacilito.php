@@ -7,8 +7,10 @@ class Codigofacilito extends CI_Controller {
 		$this->load->helper('mihelper');
 	}
 	function index() {
+		$this->load->library('Menu', array('Inicio','Contacto','Cursos'));
+		$data['mi_menu'] = $this->menu->construirMenu();
 		//esta propiedad load se hereda cuando se carga CI_Controller
-		$this->load->view('codigofacilito/bienvenido');
+		$this->load->view('codigofacilito/bienvenido',$data);
 	}
 	function holamundo() {
 		echo "hola mundo directo del metodo holamundo";
