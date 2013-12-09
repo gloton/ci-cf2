@@ -19,6 +19,8 @@ class Codigofacilito extends CI_Controller {
 	}
 	function sendMail() {
 		$this->load->library('email');
+		$configuraciones['mailtype'] = 'html'; 
+		$this->email->initialize($configuraciones);
 		$this->email->from('codeigniter@w7.cl','Code Igniter');
 		$this->email->to('gloton@gmail.com');
 		$this->email->subject('Probando...asunto');
