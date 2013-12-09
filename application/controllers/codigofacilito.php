@@ -5,6 +5,8 @@ class Codigofacilito extends CI_Controller {
 		parent::__construct();
 		#lo que hace helper es que ci primero buscara mihelper dentro de la carpeta system y si no dentro de la carpeta helper de application
 		$this->load->helper('mihelper');
+		$this->load->helper('form');
+		$this->load->model('codigofacilito_model');
 	}
 	function index() {
 		$this->load->library('Menu', array('Inicio','Contacto','Cursos'));
@@ -15,4 +17,5 @@ class Codigofacilito extends CI_Controller {
 	function holamundo() {
 		echo "hola mundo directo del metodo holamundo";
 	}
+
 } 
