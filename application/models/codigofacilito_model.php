@@ -18,4 +18,13 @@ class Codigofacilito_model extends CI_Model {
 			return false;
 		}
 	}
+	function obtenerCurso($id) {
+		$this->db->where( 'idCurso' , $id );
+		$query = $this->db->get('Cursos');
+		if ($query->num_rows() > 0) {
+			return $query;
+		} else {
+			return false;
+		}
+	}
 }

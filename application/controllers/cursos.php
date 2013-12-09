@@ -7,7 +7,12 @@ class Cursos extends CI_Controller {
 		$this->load->model('codigofacilito_model');
 	}
 	function index() {
-		$data['cursos'] = $this->codigofacilito_model->obtenerCursos();
+		$data['segmento'] = $this->uri->segment(3);
+		if (!($data['segmento'])) {
+			$data['cursos'] = $this->codigofacilito_model->obtenerCursos();
+		} else {
+			$data['cursos'] = $this->codigofacilito_model->obtenerCurso($data['segmento']);
+		}
 		$this->load->view('codigofacilito/headers');
 		$this->load->view('cursos/cursos',$data);
 	}
