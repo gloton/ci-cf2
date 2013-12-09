@@ -17,5 +17,18 @@ class Codigofacilito extends CI_Controller {
 	function holamundo() {
 		echo "hola mundo directo del metodo holamundo";
 	}
+	function sendMail() {
+		$this->load->library('email');
+		$this->email->from('codeigniter@w7.cl','Code Igniter');
+		$this->email->to('gloton@gmail.com');
+		$this->email->subject('Probando...asunto');
+		$this->email->message('Este es el cuerpo del mensaje de prueba');
+		if ($this->email->send()) {
+			echo 'Correo enviado';
+		} else {
+			echo 'Correo no enviado';
+		}
+		
+	}
 
 } 
