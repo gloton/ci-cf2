@@ -43,7 +43,6 @@ class Cursos extends CI_Controller {
 				'videos'	=>	$this->input->post('videos')
 		);
 		$this->codigofacilito_model->actualizarCurso($this->uri->segment(3), $data);
-		$this->load->view('codigofacilito/headers');
-		$this->load->view('codigofacilito/bienvenido');
+		redirect(base_url());
 	}
 }
