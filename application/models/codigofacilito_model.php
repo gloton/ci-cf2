@@ -33,4 +33,13 @@ class Codigofacilito_model extends CI_Model {
 		$query = $this->db->update( 'Cursos' , $datos );
 		 
 	}
+	function eliminarCurso($id) {
+		$this->db->delete( 'Cursos' , array('idCurso' => $id ) );
+		/*
+		 * seria lo mismo 
+		 $query = DELETE FROM `codigofacilito`.`Cursos` WHERE `idCurso`='9';
+		 $this->db->query($query);
+		 */
+		 */
+	}
 }
