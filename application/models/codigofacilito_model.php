@@ -27,4 +27,10 @@ class Codigofacilito_model extends CI_Model {
 			return false;
 		}
 	}
+	function actualizarCurso( $id , $data ) {
+		$datos = array('nombreCurso' => $data['nombre'], 'videosCurso' => $data['videos']);
+		$this->db->where( 'idCurso' , $id );
+		$query = $this->db->update( 'Cursos' , $datos );
+		 
+	}
 }

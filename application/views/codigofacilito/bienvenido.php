@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Llamado desde el controlador código facilito</h1>  
-	<p><?php echo getNombre(); ?></p>
+	<p><?php //echo getNombre(); ?></p>
 	<?php //echo $mi_menu; ?>
 </body>
 </html>

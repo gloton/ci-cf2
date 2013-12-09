@@ -26,4 +26,20 @@ class Cursos extends CI_Controller {
 		);
 		$this->codigofacilito_model->crearCurso($data);
 	}
+	function editar() {
+		$data['id'] = $this->uri->segment(3);
+		$data['curso'] = $this->codigofacilito_model->obtenerCurso($data['id']);
+		$this->load->view('codigofacilito/headers');
+		$this->load->view('cursos/editar',$data);
+		
+	}
+	function actualizar() {
+		$data = array(
+				'nombre'	=>	$this->input->post('nombre'),
+				'videos'	=>	$this->input->post('videos')
+		);
+		$this->codigofacilito_model->actualizarCurso($this->uri->segment(3), $data);
+		$this->load->view('codigofacilito/headers');
+		$this->load->view('codigofacilito/bienvenido');
+	}
 }
